@@ -1,0 +1,18 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "C#: <project-name> Debug",
+			"type": "dotnet",
+			"request": "launch",
+			"projectPath": "C:\\Users\\marci\\Documents\\GitHub\\PAMiW\\Lab1\\MyRazorApp\\MyRazorApp.csproj"
+		},
+
+		{
+			"name": ".NET Core Attach",
+			"type": "coreclr",
+			"request": "attach"
+		}
+
+	]
+}
