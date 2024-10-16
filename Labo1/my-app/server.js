@@ -46,7 +46,6 @@ app.post('/submit', (req, res) => {
 app.post('/register', (req, res) => {
     const { username, email, password, confirmPassword } = req.body;
 
-    // Server-side validation
     if (!username || !email || !password || !confirmPassword) {
         return res.send('All fields are required.');
     }
