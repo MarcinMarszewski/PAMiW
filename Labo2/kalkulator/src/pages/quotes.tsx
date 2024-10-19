@@ -41,11 +41,14 @@ export default function Home() {
 
   // Funkcja zapisywania edytowanego cytatu
   const saveEditedQuote = () => {
-    const updatedQuotes = [...quotes];
+    //const updatedQuotes = [...quotes];
+    //if (editingIndex !== null) {
+    //  updatedQuotes[editingIndex] = editingQuote;
+    //}
+    //setQuotes(updatedQuotes);
     if (editingIndex !== null) {
-      updatedQuotes[editingIndex] = editingQuote;
+        quotes[editingIndex] = editingQuote;
     }
-    setQuotes(updatedQuotes);
     setEditingIndex(null);
     setEditingQuote('');
   };
