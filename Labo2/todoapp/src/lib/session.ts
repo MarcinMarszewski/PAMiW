@@ -1,4 +1,3 @@
-// lib/session.ts
 import { IronSessionOptions } from "iron-session";
 
 export const sessionOptions: IronSessionOptions = {
@@ -9,7 +8,6 @@ export const sessionOptions: IronSessionOptions = {
   },
 };
 
-// Typowanie danych w sesji
 declare module "iron-session" {
   interface IronSessionData {
     todos?: { id: number, text: string, completed: boolean }[];
