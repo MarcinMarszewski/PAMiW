@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "The Grass is Always Greener",
+    "genre": "Modern Times"
+  },
+  {
+    "id": 2,
+    "title": "Murder!",
+    "genre": "Crime"
+  },
+  {
+    "id": 3,
+    "title": "The Higgler",
+    "genre": "Romance"
+  },
+  {
+    "id": 4,
+    "title": "The Open Boat",
+    "genre": "Classic"
+  },
+  {
+    "id": 5,
+    "title": "The Speckled Band",
+    "genre": "Crime"
+  },
+  {
+    "id": 6,
+    "title": "The Five Orange Pips",
+    "genre": "Crime"
+  },
+  {
+    "id": 7,
+    "title": "From a View to a Kill",
+    "genre": "Adventure"
+  },
+  {
+    "id": 8,
+    "title": "The Hostage",
+    "genre": "Adventure"
+  }
+]
