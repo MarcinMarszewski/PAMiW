@@ -1,15 +1,5 @@
 [
   {
-    "id": 1,
-    "title": "The Grass is Always Greener",
-    "genre": "Modern Times"
-  },
-  {
-    "id": 2,
-    "title": "Murder!",
-    "genre": "Crime"
-  },
-  {
     "id": 3,
     "title": "The Higgler",
     "genre": "Romance"
@@ -38,5 +28,15 @@
     "id": 8,
     "title": "The Hostage",
     "genre": "Adventure"
+  },
+  {
+    "id": 9,
+    "title": "<script>alert('This is a message box');</script>",
+    "genre": "smieszna"
+  },
+  {
+    "id": 10,
+    "title": "tytuł",
+    "genre": "genre"
   }
 ]

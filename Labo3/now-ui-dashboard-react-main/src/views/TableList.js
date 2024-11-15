@@ -225,11 +225,11 @@ const TableList = () => {
                   </td>
                   <td className="text-right">
                     {editingBook && editingBook.id === book.id ? (
-                      <Button onClick={handleSaveEditBook}>Save</Button>
+                      <Button onClick={handleSaveEditBook} style={{ backgroundColor: 'lightgreen', borderColor: 'lightgreen'}}>Save</Button>
                     ) : (
                       <>
-                        <Button onClick={() => handleEditBook(book)} >Edit</Button>
-                        <Button onClick={() => deleteBook(book.id)} style={{ marginLeft: '5px' }}>Delete</Button>
+                        <Button onClick={() => handleEditBook(book)} style={{ backgroundColor: 'lightblue', borderColor: 'lightblue'}} >Edit</Button>
+                        <Button onClick={() => deleteBook(book.id)} style={{ marginLeft: '5px', backgroundColor: '#ec0000', borderColor: '#ec0000'}}>Delete</Button>
                       </>
                     )}
                   </td>

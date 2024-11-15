@@ -66,7 +66,7 @@ return (
 	<>
 	<PanelHeader size="sm" />
 		<CardBody>
-			<div className="chart-area">
+			<div className="chart-area" style={{ height: '500px' }}>
 				<Bar
 					data={booksData}
 					options={{

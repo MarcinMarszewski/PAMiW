@@ -6,7 +6,6 @@ export default class Calculator {
 	  this.number2 = parseFloat(number2);
 	}
   
-	// Metoda dodająca dwie liczby
 	add() {
 	  return this.number1 + this.number2;
 	}
