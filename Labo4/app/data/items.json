@@ -1,1 +1,17 @@
-[{"id":1,"name":"elo","price":1},{"id":2,"name":"2","price":0}]
+[
+  {
+    "id": 1,
+    "name": "ew",
+    "price": 0.2
+  },
+  {
+    "id": 2,
+    "name": "1",
+    "price": 213
+  },
+  {
+    "id": 3,
+    "name": "12",
+    "price": 1
+  }
+]
