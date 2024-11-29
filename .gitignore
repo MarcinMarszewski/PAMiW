@@ -1,0 +1,11 @@
+*\node_modules\*
+/Labo4/api/node_modules
+/Labo5/shop/backend/node_modules
+/Labo4/app/android
+/Labo5/shop/capacitor-app/android
+/Labo5/shop/web-app/public
+/Labo5/shop/capacitor-app/public
+Labo5/shop/capacitor-app/package-lock.json
+Labo5/shop/backend/package-lock.json
+/Labo4/app/public
+Labo5/shop/web-app/package-lock.json

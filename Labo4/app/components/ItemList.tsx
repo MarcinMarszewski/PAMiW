@@ -52,7 +52,7 @@ const ItemList = observer(({viewModel}: ItemListProps) => {
 			<LineDiv>
 				<Text>Name</Text>
 				<Text>Price</Text>
-				<Text/><Text>Action</Text>
+				<Text> </Text><Text>Action</Text>
 			</LineDiv>
 				{viewModel.items.map((item : ItemModel) => (
 					<div key={item.id}>
