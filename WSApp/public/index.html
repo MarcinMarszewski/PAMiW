@@ -1,0 +1,157 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Chat</title>
+
+    <style>
+        #message_section {
+            display: none;
+        }
+
+        #join_room_section {
+            display: block;
+        }
+
+        #display_room_section {
+            display: none;
+        }
+
+        img.chat-image {
+            max-width: 100px;
+            max-height: 100px;
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>WebSocket Chat</h1>
+
+    <div id="join_room_section">
+        <input type="text" id="usernameInput" placeholder="Enter your username">
+        <input type="text" id="roomInput" placeholder="Enter room name">
+        <button onclick="joinRoom()">Join Room</button>
+    </div>
+
+    <div id="display_room_section">
+        <h2>Room: <span id="room_name"></span></h2>
+        <h2>Username: <span id="username"></span></h2>
+        <button onclick="leaveRoom()">Leave Room</button>
+    </div>
+
+    <div id="chat"></div>
+
+    <div id="message_section">
+        <input type="text" id="messageInput" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+        <input type="file" id="imageInput" accept="image/*">
+        <button onclick="sendImage()">Send Image</button>
+    </div>
+
+    <script type="module">
+        import Message from './messageModel.js';
+
+        let ws;
+        let username;
+        let room;
+
+        function joinRoom() {
+            username = document.getElementById('usernameInput').value;
+            room = document.getElementById('roomInput').value;
+
+            document.getElementById('room_name').innerText = room;
+            document.getElementById('username').innerText = username;
+
+            leaveRoom();
+
+            ws = new WebSocket('ws://localhost:3000');
+
+            ws.onopen = () => {
+                const joinMessage = new Message('join', room, username);
+                ws.send(JSON.stringify(joinMessage));
+                document.getElementById('join_room_section').style.display = 'none';
+                document.getElementById('display_room_section').style.display = 'block';
+                document.getElementById('message_section').style.display = 'block';
+            };
+
+            ws.onmessage = (event) => {
+                const chat = document.getElementById('chat');
+                const data = JSON.parse(event.data);
+
+                if (data.type === 'history') {
+                    data.messages.forEach(message => {
+                        displayMessage(message);
+                    });
+                }
+                else {
+                    displayMessage(data);
+                }
+            };
+        }
+
+        function displayMessage(message) {
+            if (message.type === 'image') {
+                const div = document.createElement('div');
+                div.innerText = `${message.username}:`;
+                chat.appendChild(div);
+
+                const img = document.createElement('img');
+                img.src = message.text;
+                img.alt = `${message.username}'s image`;
+                img.classList.add('chat-image');
+                chat.appendChild(img);
+            }
+            else if (message.type === 'message') {
+                const div = document.createElement('div');
+                div.innerText = `${message.username}: ${message.text}`;
+                chat.appendChild(div);
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = new Message('message', room, username, input.value);
+            ws.send(JSON.stringify(message));
+            input.value = '';
+        }
+
+        function sendImage() {
+            const input = document.getElementById('imageInput');
+            const file = input.files[0];
+            const reader = new FileReader();
+
+            reader.onload = () => {
+                const message = new Message('image', room, username, reader.result);
+                ws.send(JSON.stringify(message));
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+        function leaveRoom() {
+            if (ws && ws.readyState === WebSocket.OPEN)
+                ws.close();
+            clearChat();
+
+            document.getElementById('join_room_section').style.display = 'block';
+            document.getElementById('display_room_section').style.display = 'none';
+            document.getElementById('message_section').style.display = 'none';
+        }
+
+        function clearChat() {
+            document.getElementById('chat').innerHTML = '';
+        }
+
+        window.joinRoom = joinRoom;
+        window.sendMessage = sendMessage;
+        window.leaveRoom = leaveRoom;
+        window.sendImage = sendImage;
+    </script>
+</body>
+
+</html>
