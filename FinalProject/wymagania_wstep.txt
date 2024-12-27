@@ -1,0 +1,46 @@
+Opis biznesowy projektu
+
+Projekt "TODO" to prosta aplikacja webowa umożliwiająca użytkownikom zarządzanie zadaniami. Celem jest dostarczenie minimalistycznego narzędzia, które pozwoli dodawać, edytować i usuwać zadania, jednocześnie synchronizując dane między różnymi klientami.
+
+W skład projektu wchodzą:
+
+    Serwerowa baza danych.
+    API do komunikacji między komponentami.
+    Dwa klienty:
+        Webowy (MVC).
+        Mobilny (MVVM).
+
+Projekt jest realizowany jako zadanie laboratoryjne i ma być ukończony w krótkim czasie.
+Wymagania funkcjonalne
+
+    Zarządzanie zadaniami
+        Dodawanie nowego zadania z nazwą i opcjonalnym terminem.
+        Edycja istniejących zadań (zmiana nazwy lub terminu).
+        Usuwanie zadań.
+
+    Widok listy zadań
+        Wyświetlanie listy zadań w kolejności dodania.
+        Filtrowanie zadań (np. ukończone/nieukończone).
+
+    API
+        Obsługa podstawowych operacji CRUD (Create, Read, Update, Delete) na zadaniach.
+
+    Klient webowy (MVC)
+        Interfejs przeglądarkowy umożliwiający przeglądanie listy zadań i zarządzanie nimi.
+
+    Klient mobilny (MVVM)
+        Prosta aplikacja mobilna z widokiem listy zadań i podstawowymi operacjami CRUD.
+
+Wymagania niefunkcjonalne
+
+    Wydajność
+        API obsługuje do 50 użytkowników jednocześnie (na potrzeby testów laboratoryjnych).
+
+    Bezpieczeństwo
+        Brak specjalnych wymagań (zakłada się, że dane są niekrytyczne).
+
+    Minimalna niezawodność
+        Aplikacja działa poprawnie w środowisku laboratoryjnym.
+
+    Prostota implementacji
+        Kod powinien być czytelny i umożliwiać łatwe modyfikacje przez innych uczestników projektu.
