@@ -21,13 +21,13 @@ export class TaskController {
     }
 
     public async completeTask(id: string): Promise<Task | null> {
-        const task = await this.taskService.updateTask(id, null, null, true);
+        const task = await this.taskService.changeTaskStatus(id, true);
         if(task) return new Task(task.id, task.title, task.dueDate ? new Date(task.dueDate) : null, task.completed);
         return null;
     }
 
     public async uncompleteTask(id: string): Promise<Task | null> {
-        const task = await this.taskService.updateTask(id, null, null, false);
+        const task = await this.taskService.changeTaskStatus(id, false);
         if(task) return new Task(task.id, task.title, task.dueDate ? new Date(task.dueDate) : null, task.completed);
         return null;
     }

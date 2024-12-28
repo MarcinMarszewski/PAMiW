@@ -23,11 +23,20 @@ export class TaskService {
         return this.taskRepository.find();
     }
 
-    public async updateTask(id: string, title?: string | null, dueDate?: Date | null, completed?: boolean | null): Promise<TaskEntity | null> {
+    public async updateTask(id: string, title?: string | null, dueDate?: Date | null): Promise<TaskEntity | null> {
         const task = await this.taskRepository.findOneBy({ id });
         if (task) {
             if (title) task.title = title;
             if (dueDate) task.dueDate = new Date(dueDate).toISOString();
+            else if (dueDate === null) task.dueDate = null;
+            return await this.taskRepository.save(task);
+        }
+        return null;
+    }
+
+    public async changeTaskStatus(id: string, completed?: boolean | null): Promise<TaskEntity | null> {
+        const task = await this.taskRepository.findOneBy({ id });
+        if (task) {
             if (completed !== null && completed !== undefined) task.completed = completed
             return await this.taskRepository.save(task);
         }

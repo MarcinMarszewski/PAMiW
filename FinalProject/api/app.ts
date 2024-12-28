@@ -6,24 +6,26 @@ import { TaskController } from "./Infrastructure/Controllers/TaskController";
 import { Task } from "./Domain/Task";
 import { TaskService } from "./Application/TaskService";
 import { AppDataSource } from "./Infrastructure/data-source";
+import cors from "cors";
 
 const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
+app.use(cors());
 
     const taskService = new TaskService();
     const taskController = new TaskController(taskService);
 
     app.post("/tasks/add", async (req, res) => {
         const dto: TaskDTO = req.body;
-        if(!dto.title) return res.status(400).json({ message: "Title is required" });
+        if(!dto.title) return res.status(304).json({ message: "Title is required" });
         const task = await taskController.createTask(dto.title, dto.dueDate);
         if (task) {
             const taskDTO = new TaskDTO(task.id, task.title, task.dueDate, task.completed);
             res.status(201).json(taskDTO);
         } else {
-            res.status(400).json({ message: "Invalid task data" });
+            res.status(400).json({ message: "Could not create task" });
         }
     });
 
