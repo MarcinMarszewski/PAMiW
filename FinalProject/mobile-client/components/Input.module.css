@@ -5,10 +5,3 @@
 	border-radius: 4px;
 	border: 1px solid #dcdcdc;
 }
-
-@media (max-width: 600px) {
-	.input {
-		width: 80px;
-		margin-bottom: 10px;
-	}
-}

@@ -1,10 +1,15 @@
-import React from 'react';
-
+import React, { CSSProperties } from 'react';
 import { ReactNode } from 'react';
+import styles from './LineDiv.module.css';
 
-const LineDiv = ({ children }: { children: ReactNode }) => {
+interface LineDivProps {
+  children?: ReactNode;
+  style?: CSSProperties;
+}
+
+const LineDiv = ({ children, style }: LineDivProps) => {
   return (
-    <div style = {{display: 'flex', gap: '5px', alignItems: 'center'}}>
+    <div style = {{ ...style}} className={styles.line_div}>
       {children}
     </div>
   );

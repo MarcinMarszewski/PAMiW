@@ -112,7 +112,7 @@ const ItemList: React.FC<ItemListProps> = ({ controller }) => {
 						(
 							<LineDiv style={{ backgroundColor: task.completed ? '#5f5' : '#f55' , width: '1920px', justifyContent: 'center'}}>
 								<LineDiv>
-								<Text style={{ width: '300px'}}>{task.title}</Text>
+								<Text style={{ width: '300px', wordBreak:'break-word'}}>{task.title}</Text>
 								<Text>{task.dueDate?.toString().substring(0,10)}</Text>
 								<Text>{task.completed ? "Completed" : "Not Completed"}</Text>
 								{task.completed ? <UncompleteButton onClick={() => handleUncompleteTask(task.id)}/> : <CompleteButton onClick={() => handleCompleteTask(task.id)}/>}

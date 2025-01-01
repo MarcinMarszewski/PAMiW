@@ -3,7 +3,7 @@ import type { NextConfig } from 'next';
 const isDev = process.env.NODE_ENV === 'development';
 
 const nextConfig: NextConfig = {
-  /* reactStrictMode: true,
+  reactStrictMode: true,
   images: {
     unoptimized: true,
   },
@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
       // Add other paths here if needed
     };
   // other config options here
-  } */
+  }
 }
 
 export default nextConfig;

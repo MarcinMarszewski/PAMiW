@@ -19,36 +19,36 @@ const Button: React.FC<ButtonProps> = ({ onClick, children, className }) => {
 
 export const CompleteButton: React.FC<{ onClick: React.MouseEventHandler<HTMLButtonElement> }> = ({ onClick }) => (
   <Button className={styles.completeButton} onClick={onClick}>
-    <FontAwesomeIcon icon={faCheck} /> Complete
+    <FontAwesomeIcon icon={faCheck} />
   </Button>
 );
 
 export const UncompleteButton: React.FC<{ onClick: React.MouseEventHandler<HTMLButtonElement> }> = ({ onClick }) => (
   <Button className={styles.uncompleteButton} onClick={onClick}>
-    <FontAwesomeIcon icon={faTimes} /> Uncomplete
+    <FontAwesomeIcon icon={faTimes} />
   </Button>
 );
 
 export const EditButton: React.FC<{ onClick: React.MouseEventHandler<HTMLButtonElement> }> = ({ onClick }) => (
   <Button className={styles.editButton} onClick={onClick}>
-    <FontAwesomeIcon icon={faEdit} /> Edit
+    <FontAwesomeIcon icon={faEdit} />
   </Button>
 );
 
 export const AddButton: React.FC<{ onClick: React.MouseEventHandler<HTMLButtonElement> }> = ({ onClick }) => (
   <Button className={styles.addButton} onClick={onClick}>
-    <FontAwesomeIcon icon={faPlus} /> Add
+    <FontAwesomeIcon icon={faPlus} />
   </Button>
 );
 
 export const DeleteButton: React.FC<{ onClick: React.MouseEventHandler<HTMLButtonElement> }> = ({ onClick }) => (
   <Button className={styles.deleteButton} onClick={onClick}>
-    <FontAwesomeIcon icon={faTrash} /> Delete
+    <FontAwesomeIcon icon={faTrash} />
   </Button>
 );
 
 export const UpdateButton: React.FC<{ onClick: React.MouseEventHandler<HTMLButtonElement> }> = ({ onClick }) => (
   <Button className={styles.updateButton} onClick={onClick}>
-    <FontAwesomeIcon icon={faCheckCircle} /> Update
+    <FontAwesomeIcon icon={faCheckCircle} />
   </Button>
 );

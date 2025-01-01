@@ -2,7 +2,7 @@
   color: white;
   border: none;
   border-radius: 4px;
-  padding: 8px 12px;
+  padding: 8px 2px 8px 10px;
   margin: 4px;
   cursor: pointer;
   display: flex;
@@ -15,7 +15,6 @@
 
 .completeButton {
   background-color: green;
-  width: 110px;
 }
 
 .completeButton:hover {
@@ -24,7 +23,6 @@
 
 .uncompleteButton {
   background-color: orange;
-  width: 110px;
 }
 
 .uncompleteButton:hover {
