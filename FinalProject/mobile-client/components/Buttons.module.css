@@ -1,0 +1,64 @@
+.button {
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.button svg {
+  margin-right: 8px;
+}
+
+.completeButton {
+  background-color: green;
+  width: 110px;
+}
+
+.completeButton:hover {
+  background-color: darkgreen;
+}
+
+.uncompleteButton {
+  background-color: orange;
+  width: 110px;
+}
+
+.uncompleteButton:hover {
+  background-color: darkorange;
+}
+
+.editButton {
+  background-color: blue;
+}
+
+.editButton:hover {
+  background-color: darkblue;
+}
+
+.addButton {
+  background-color: purple;
+}
+
+.addButton:hover {
+  background-color: darkpurple;
+}
+
+.deleteButton {
+  background-color: red;
+}
+
+.deleteButton:hover {
+  background-color: darkred;
+}
+
+.updateButton {
+  background-color: blue;
+}
+
+.updateButton:hover {
+  background-color: darkblue;
+}

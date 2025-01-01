@@ -13,3 +13,7 @@ Labo5/shop/web-app/package-lock.json
 /FinalProject/api/node_modules
 /FinalProject/mobile-client/.next
 /FinalProject/mobile-client/node_modules
+/FinalProject/web-client/.next
+/FinalProject/web-client/node_modules
+/FinalProject/mobile-client/android
+/FinalProject/mobile-client/out/_next

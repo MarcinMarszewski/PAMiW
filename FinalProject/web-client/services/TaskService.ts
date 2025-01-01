@@ -2,7 +2,7 @@ import {TaskModel} from '../models/TaskModel';
 import {ITaskService} from './ITaskService';
 import axios from 'axios';
 
-const ipv4 : string = "192.168.1.219:3000"
+const ipv4 : string = "localhost:3000"
 
 export class TaskService implements ITaskService {
 	async getTasks(): Promise<TaskModel[]> {
